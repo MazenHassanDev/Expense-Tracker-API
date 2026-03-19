@@ -167,8 +167,8 @@ Authorization: Bearer <access_token>
 | `page` | Page number (default: 1) |
 | `limit` | Items per page (default: 10) |
 | `filter` | `past_week`, `past_month`, `last_3_months`, or `custom` |
-| `start_date` | Required if filter is `custom` (format: `DD-MM-YYYY`) |
-| `end_date` | Required if filter is `custom` (format: `DD-MM-YYYY`) |
+| `start_date` | Required if filter is `custom` (format: `YYYY-MM-DD`) |
+| `end_date` | Required if filter is `custom` (format: `YYYY-MM-DD`) |
 
 **Response `200 OK`:**
 ```json
