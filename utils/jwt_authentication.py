@@ -23,7 +23,7 @@ def generate_access_token(user_id):
 
 def verify_token(token):
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithm=['HS256'])
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
         return payload
     except jwt.ExpiredSignatureError:
         return None
@@ -34,7 +34,7 @@ def verify_token(token):
 # REFRESH TOKEN
 # -------------------------------------------------------------------------
 
-def generate_refresh_token(user_id):
+def generate_refresh_token():
     return secrets.token_hex(64)
 
 def get_refresh_token_expiry():
@@ -71,7 +71,7 @@ def token_required(f):
     def decorated(*args, **kwargs):
         token = None
 
-        if 'Authentication' in request.headers:
+        if 'Authorization' in request.headers:
             auth_header = request.headers['Authorization']
             token = auth_header.split(' ')[1] if " " in auth_header else None
 

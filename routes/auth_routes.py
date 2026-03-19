@@ -52,7 +52,7 @@ def register():
         return jsonify({
             'message': 'User registered successfully',
             'access_token': access_token,
-            'refresh_token': new_refresh_token
+            'refresh_token': refresh_token
         }), 201
     
     except Exception as e:
@@ -101,7 +101,7 @@ def login():
         return jsonify({
             'message': "Login successful.",
             'access_token': access_token,
-            'refresh_token': new_refresh_token
+            'refresh_token': refresh_token
         }), 200
 
     except Exception as e:
